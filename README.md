@@ -1,14 +1,14 @@
 # E-Commerce A/B Testing: Call to Action Optimization
 
 ## Project Overview
-[cite_start]An e-commerce company wants to optimize its website by changing the "Call to Action" (CTA) button from the old design to a new one (e.g., from "Buy Now" to "Add to Cart"). This project evaluates the results of an A/B test to determine if the new button statistically improves the user conversion rate.
+An e-commerce company wants to optimize its website by changing the "Call to Action" (CTA) button from the old design to a new one (e.g., from "Buy Now" to "Add to Cart"). This project evaluates the results of an A/B test to determine if the new button statistically improves the user conversion rate.
 
 Users were divided into two groups:
-* [cite_start]**Control Group (A):** Users who interacted with the old CTA button[cite: 5].
-* [cite_start]**Treatment Group (B):** Users who interacted with the new CTA button[cite: 6].
+**Control Group (A):** Users who interacted with the old CTA button.
+**Treatment Group (B):** Users who interacted with the new CTA button.
 
 ## Dataset & Cleaning
-- [cite_start]**Original Data:** User interaction logs containing group assignments and conversion status (0 = No, 1 = Yes)[cite: 9].
+- **Original Data:** User interaction logs containing group assignments and conversion status (0 = No, 1 = Yes).
 - **Data Cleaning:** Removed duplicate `user_id` entries and filtered out mismatched records (e.g., control users seeing the treatment page).
 - **Final Sample Size:** ~288,540 unique users.
 
@@ -16,27 +16,24 @@ Users were divided into two groups:
 This analysis goes beyond simple conversion rates, utilizing a robust statistical pipeline:
 
 ### 1. Probability & Distributions
-* [cite_start]**Bernoulli/Binomial Distribution:** Modeled each user's click as a binary outcome (Success/Failure)[cite: 9].
-* [cite_start]Calculated the baseline probability of conversion for both groups[cite: 10].
+**Bernoulli/Binomial Distribution:** Modeled each user's click as a binary outcome (Success/Failure).
+* Calculated the baseline probability of conversion for both groups.
 
 ### 2. Confidence Intervals
-* [cite_start]Constructed **95% Confidence Intervals** for the conversion rates of each group[cite: 15].
-* [cite_start]Analyzed the overlap between intervals to visually assess potential significance[cite: 16].
+* Constructed **95% Confidence Intervals** for the conversion rates of each group.
+* Analyzed the overlap between intervals to visually assess potential significance.
 
 ### 3. Frequentist Hypothesis Testing
-* [cite_start]**Null Hypothesis (H0):** There is no difference in conversion rates between the old and new buttons[cite: 19].
-* **Alternative Hypothesis (H1):** The new button yields a higher conversion rate[cite: 20].
-* **Method:** Conducted a Z-test for proportions to calculate the p-value[cite: 21].
+**Null Hypothesis (H0):** There is no difference in conversion rates between the old and new buttons.
+**Alternative Hypothesis (H1):** The new button yields a higher conversion rate.
+**Method:** Conducted a Z-test for proportions to calculate the p-value.
 
 ### 4. Bayesian Inference
-* [cite_start]Simulated 10,000 samples using the **Beta Distribution** to calculate the exact posterior probability that Treatment (B) is better than Control (A)[cite: 11].
-
-### 5. Power Analysis
-* [cite_start]Calculated **Statistical Power** to ensure the sample size was large enough to detect a meaningful difference, minimizing the risk of a Type II Error[cite: 22].
+* Simulated 10,000 samples using the **Beta Distribution** to calculate the exact posterior probability that Treatment (B) is better than Control (A).
 
 ## Results & Business Conclusion
-* The Z-test yielded a p-value significantly higher than the 0.05 threshold[cite: 21]. **We fail to reject the null hypothesis.**
-* The Power Analysis confirmed a statistical power of ~100%, meaning the test was highly sensitive. [cite_start]The lack of statistical significance is due to a genuine lack of difference, not a lack of data[cite: 22].
+* The Z-test yielded a p-value significantly higher than the 0.05 threshold. **We fail to reject the null hypothesis.**
+* The Power Analysis confirmed a statistical power of ~100%, meaning the test was highly sensitive. The lack of statistical significance is due to a genuine lack of difference, not a lack of data.
 
 ---
 *Disclaimer: The statistical analysis, data cleaning, and core Python code were independently developed. Generative AI tools were used solely to assist with proofreading and structuring this Markdown presentation.*
