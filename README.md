@@ -58,8 +58,6 @@ Install all dependencies with:
 pip install pandas numpy scipy statsmodels matplotlib seaborn
 ```
 
-Or using a `requirements.txt`:
-
 ```
 pandas
 numpy
